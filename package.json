@@ -1,0 +1,25 @@
+{
+  "name": "koa-cli",
+  "version": "1.0.0",
+  "description": "koa脚手架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aduck/koa-cli.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aduck/koa-cli/issues"
+  },
+  "homepage": "https://github.com/aduck/koa-cli#readme",
+  "dependencies": {
+    "ioredis": "^4.0.0",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
+  }
+}
