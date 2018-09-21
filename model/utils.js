@@ -1,8 +1,16 @@
-// 一些数据库orm操作
-module.exports = {
-  // 连接数据库
-  connect: () => {},
-  // 断开连接
-  disconnect: () => {},
-  // todo
+// 数据库操作
+const mysql = require('mysql')
+const mysqlConf = require('../config').mysql
+module.exports = sqlOpt => {
+  return new Promise((resolve, reject) => {
+    let connection = mysql.createConnection(mysqlConf)
+    connection.connect(err => {
+      if (err) reject(err)
+    })
+    connection.query(sqlOpt, (err, results, fields) => {
+      if (err) return reject(err)
+      resolve({results, fields})
+    })
+    connection.end()
+  })
 }

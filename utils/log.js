@@ -1,6 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 const {logPath} = require('../config')
+/**
+ * 访问日志
+ */
 module.exports = ctx => {
   if (!fs.existsSync(logPath)) fs.mkdirSync(logPath)
   let today = new Date()

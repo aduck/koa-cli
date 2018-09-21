@@ -1,4 +1,7 @@
 const log = require('../utils/log')
+/**
+ * 请求响应模型
+ */
 module.exports = async (ctx, next) => {
   try {
     log(ctx).info()
@@ -9,9 +12,10 @@ module.exports = async (ctx, next) => {
     }
   } catch (e) {
     log(ctx).error(e.message)
+    let status = e.status
     ctx.status = 200
     ctx.body = {
-      code: -1,
+      code: status ? -status : -1,
       message: e.message || e.toString()
     }
   }

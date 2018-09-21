@@ -1,9 +1,21 @@
 const path = require('path')
 module.exports = {
-  // 此处写配置
+  // 服务端口
   port: 8888,
-  sql: {},
+  // mysql
+  mysql: {
+    host: 'localhost',
+    user: 'root',
+    password: '123456',
+    database: 'test'
+  },
+  // redis
   redis: {},
-  // 日志目录
-  logPath: path.resolve(__dirname, './log')
+  // log
+  logPath: path.resolve(__dirname, './log'),
+  // jwt
+  token: {
+    secret: 'hello world',
+    expiresIn: 2 * 60 * 60
+  }
 }
