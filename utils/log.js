@@ -10,15 +10,19 @@ module.exports = ctx => {
   let fileName = `${today.getFullYear()}-${prefix(today.getMonth() + 1)}-${prefix(today.getDate())}`
   // 记日志
   function log (type, msg) {
-    let url = ctx.request.url
-    let method = ctx.request.method
-    let data = JSON.stringify(ctx.request.body) || null
+    let req = ctx.request
+    let url = req.url
+    let method = req.method
+    let data = JSON.stringify(req.body) || null
     let time = `${prefix(today.getHours())}:${prefix(today.getMinutes())}`
-    let uid = ctx.state.user ? ctx.state.user.id : 0
-    let ip = ctx.request.ip || null
-    fs.writeFile(path.join(logPath, fileName), `${type} ${url} ${method} ${data} ${time} ${uid} ${ip} ${msg || ''} \r\n`, {flag: 'a'}, err => {
-      if (err) throw err
-      console.log('log写入成功')
+    let ip = req.ip || null
+    // 有点诡异
+    process.nextTick(() => {
+      let uid = ctx.state.user ? ctx.state.user.user_id : 0
+      fs.writeFile(path.join(logPath, fileName), `${type} ${url} ${method} ${data} ${time} ${uid} ${ip} ${msg || ''} \r\n`, {flag: 'a'}, err => {
+        if (err) throw err
+        console.log('log写入成功')
+      })
     })
   }
   return {
