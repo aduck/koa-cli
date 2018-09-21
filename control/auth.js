@@ -15,7 +15,7 @@ exports.login = async ctx => {
     user_id: results[0].id,
     user_name: results[0].name,
     avatar: results[0].avatar,
-    expireAt: Math.floor(Date.now() / 1000) + token.expiresIn,
+    expireAt: Date.now() + token.expiresIn * 1000,
     valid: token.expiresIn
   }
   ctx.state.data = {
@@ -32,7 +32,7 @@ exports.refresh = ctx => {
   // 解析token
   jwt.verify(oldToken, token.secret, (err, decoded) => {
     if (err) ctx.throw(401, err.message)
-    let payload = {...decoded, expireAt: Math.floor(Date.now() / 1000) + token.expiresIn}
+    let payload = {...decoded, expireAt: Date.now() + token.expiresIn * 1000}
     delete payload.exp
     delete payload.iat
     ctx.state.data = {
