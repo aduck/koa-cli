@@ -17,5 +17,10 @@ module.exports = {
   token: {
     secret: 'hello world',
     expiresIn: 2 * 60 * 60
+  },
+  // upload
+  upload: {
+    uploadDir: './upload',
+    maxFileSize: 10 * 1024 * 1024
   }
 }

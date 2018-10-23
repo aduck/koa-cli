@@ -1,4 +1,4 @@
-const run = require('./utils')
+const execSql = require('../utils/execSql')
 /**
  * 建表
  */
@@ -11,7 +11,7 @@ const createTable = () => {
       avater VARCHAR(100)
     )
   `
-  run(sql)
+  execSql(sql)
     .then(() => {
       console.log('创建成功')
     })

@@ -1,16 +1,16 @@
 {
   "name": "koa-cli",
-  "version": "1.0.0",
-  "description": "koa脚手架",
+  "version": "0.0.1",
+  "description": "koa基础脚手架代码",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aduck/koa-cli.git"
   },
-  "author": "",
+  "author": "higher",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aduck/koa-cli/issues"
@@ -19,11 +19,15 @@
   "dependencies": {
     "axios": "^0.18.0",
     "blueimp-md5": "^2.10.0",
+    "formidable": "^1.2.1",
     "ioredis": "^4.0.0",
     "jsonwebtoken": "^8.3.0",
     "koa": "^2.5.2",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }
