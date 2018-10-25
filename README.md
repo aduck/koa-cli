@@ -1,35 +1,38 @@
-# koa项目基础脚手架
+## 开始
 
--- api 调第三方接口
+`npm install && npm run dev`
 
--- control 用来写业务逻辑
+### 目录
 
--- log 日志
+```
+api 三方接口
+control 业务逻辑
+log 日志
+middle 中间件
+model 封装数据库操作
+router 路由
+utils 通用（service）
+```
 
--- middle 中间件
+### 更新日志
 
--- model 用来封装数据库操作的方法
+> 2018-10-25
+* 增加邮件支持
 
--- router 路由
-
--- utils 通用方法
-
-> 2018-10-23 新增
+> 2018-10-23
 * form data解析
 * 优化结构
 
-> 2018-09-21 新增
+> 2018-09-21
 * auth验证
 * model操作
 
-> 2018-09-20 新增
+> 2018-09-20
 * log记录
 * 第三方接口
 
 > TODOS
-* redis操作
 * 任务管理 * * 8 * * shell.sh
-* 邮件接入
 * 验证码
 * 手机
 * 支付接入

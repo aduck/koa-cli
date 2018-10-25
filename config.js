@@ -10,7 +10,12 @@ module.exports = {
     database: 'test'
   },
   // redis
-  redis: {},
+  redis: {
+    port: 6379,
+    host: '127.0.0.1',
+    family: 4,
+    password: ''
+  },
   // log
   logPath: path.resolve(__dirname, './log'),
   // jwt
@@ -22,5 +27,15 @@ module.exports = {
   upload: {
     uploadDir: './upload',
     maxFileSize: 10 * 1024 * 1024
+  },
+  // mail
+  mail: {
+    host: 'smtp.qq.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'test@qq.com',
+      pass: '1234567890'
+    }
   }
 }
