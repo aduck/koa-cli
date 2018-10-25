@@ -1,7 +1,7 @@
 {
   "name": "koa-cli",
   "version": "0.0.1",
-  "description": "koa基础脚手架代码",
+  "description": "koa基础脚手架",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index"
@@ -18,7 +18,6 @@
   "homepage": "https://github.com/aduck/koa-cli#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "blueimp-md5": "^2.10.0",
     "formidable": "^1.2.1",
     "ioredis": "^4.0.0",
     "jsonwebtoken": "^8.3.0",

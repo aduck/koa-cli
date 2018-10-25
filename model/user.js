@@ -1,5 +1,5 @@
 const execSql = require('../utils/execSql')
-const md5 = require('blueimp-md5')
+const md5 = require('../utils/md5')
 exports.verify = (userName, password) => {
   let opt = {
     sql: 'SELECT * FROM `USER` WHERE `name` = ? AND `password` = ? LIMIT 1',

@@ -5,13 +5,13 @@
 ### 目录
 
 ```
-api 三方接口
+api     三方接口
 control 业务逻辑
-log 日志
-middle 中间件
-model 封装数据库操作
-router 路由
-utils 通用（service）
+log     日志
+middle  中间件
+model   封装数据库操作
+router  路由
+utils   通用（service）
 ```
 
 ### 更新日志
