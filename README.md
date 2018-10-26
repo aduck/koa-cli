@@ -1,6 +1,9 @@
 ## 开始
 
-`npm install && npm run dev`
+```
+npm install
+npm run dev
+```
 
 ### 目录
 
@@ -36,3 +39,4 @@ utils   通用（service）
 * 验证码
 * 手机
 * 支付接入
+* 异步任务

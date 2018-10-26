@@ -4,7 +4,8 @@
   "description": "koa基础脚手架",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index"
+    "dev": "cross-env NODE_ENV=\"development\" nodemon index",
+    "build": "cross-env NODE_ENV=\"production\" node index"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "nodemailer": "^4.6.8"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "nodemon": "^1.18.4"
   }
 }

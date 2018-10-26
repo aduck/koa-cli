@@ -1,7 +1,6 @@
-const path = require('path')
 module.exports = {
-  // 服务端口
-  port: 8888,
+  // 端口
+  port: 80,
   // mysql
   mysql: {
     host: 'localhost',
@@ -16,17 +15,10 @@ module.exports = {
     family: 4,
     password: ''
   },
-  // log
-  logPath: path.resolve(__dirname, './log'),
   // jwt
   token: {
-    secret: 'hello world',
+    secret: 'abcdefgh',
     expiresIn: 2 * 60 * 60
-  },
-  // upload
-  upload: {
-    uploadDir: './upload',
-    maxFileSize: 10 * 1024 * 1024
   },
   // mail
   mail: {
