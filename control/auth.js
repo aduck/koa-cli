@@ -1,6 +1,8 @@
 const user = require('../model/user')
 const jwt = require('jsonwebtoken')
 const {token} = require('../config')
+// 接入任务调度
+const agenda = require('../utils/agenda')
 /**
  * 登录
  */
@@ -18,6 +20,8 @@ exports.login = async ctx => {
     expireAt: Date.now() + token.expiresIn * 1000,
     valid: token.expiresIn
   }
+  // 发邮件
+  agenda.now('登录邮件', {userName})
   ctx.state.data = {
     ...payload,
     token: jwt.sign(payload, token.secret, {expiresIn: token.expiresIn})

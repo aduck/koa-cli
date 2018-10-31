@@ -29,5 +29,10 @@ module.exports = {
       user: 'test@qq.com',
       pass: '1234567890'
     }
+  },
+  // mongodb
+  mongodb: {
+    address: 'localhost:27017/agenda',
+    collection: 'agendaJobs'
   }
 }

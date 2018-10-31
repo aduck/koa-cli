@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=\"development\" nodemon index",
-    "build": "cross-env NODE_ENV=\"production\" node index"
+    "build": "cross-env NODE_ENV=\"production\" node index",
+    "task": "cross-env JOB_TYPES=email node worker"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/aduck/koa-cli#readme",
   "dependencies": {
+    "agenda": "^2.0.2",
     "axios": "^0.18.0",
     "formidable": "^1.2.1",
     "ioredis": "^4.0.0",

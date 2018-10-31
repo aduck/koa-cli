@@ -6,9 +6,9 @@ module.exports = Object.assign({
   // 服务端口
   port: 8888,
   // log
-  logPath: path.resolve(__dirname, './log'),
+  logPath: path.resolve(__dirname, '../log'),
   upload: {
-    uploadDir: './upload',
+    uploadDir: 'upload',
     maxFileSize: 10 * 1024 * 1024
   },
 }, env === 'development' ? devConf : prodConf)
