@@ -7,7 +7,7 @@ module.exports = async (ctx, next) => {
     await next()
     ctx.body = ctx.body ? ctx.body : {
       code: ctx.state.code !== undefined ? ctx.state.code : 0,
-      data: ctx.state.data || null
+      data: ctx.state.data !== undefined ? ctx.state.data : null
     }
     log(ctx).info()
   } catch (e) {
