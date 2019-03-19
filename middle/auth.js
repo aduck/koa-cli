@@ -5,9 +5,8 @@ const {token} =  require('../config')
  */
 module.exports = async (ctx, next) => {
   let authorization = ctx.request.header.authorization
-  if (!authorization) return ctx.throw(401)
-  let authTmp = authorization.toString().split(' ')
-  if (!authTmp.length || authTmp[0] !== 'bearer' || !authTmp[1]) return ctx.throw(401)
-  ctx.state.user = jwt.verify(authTmp[1], token.secret)
+  let auth2Arr = authorization && authorization.split(' ') || []
+  if (!authorization || auth2Arr.length !== 2 || auth2Arr[0] !== 'bearer') return ctx.throw(401)
+  ctx.state.user = jwt.verify(auth2Arr[1], token.secret)
   await next()
 }

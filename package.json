@@ -1,6 +1,6 @@
 {
   "name": "koa-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "koa基础脚手架",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/aduck/koa-cli#readme",
   "dependencies": {
+    "@koa/cors": "^2.2.3",
     "agenda": "^2.0.2",
     "axios": "^0.18.0",
+    "deepmerge": "^3.2.0",
     "formidable": "^1.2.1",
     "ioredis": "^4.0.0",
     "jsonwebtoken": "^8.3.0",

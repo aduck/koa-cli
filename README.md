@@ -4,7 +4,8 @@
 
 ```
 npm install
-npm run dev
+npm run dev # 开发
+npm run build # 生产
 ```
 
 ### 目录

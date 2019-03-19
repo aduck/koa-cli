@@ -2,7 +2,7 @@ const user = require('../model/user')
 const jwt = require('jsonwebtoken')
 const {token} = require('../config')
 // 接入任务调度
-const agenda = require('../utils/agenda')
+// const agenda = require('../utils/agenda')
 /**
  * 登录
  */
@@ -21,7 +21,7 @@ exports.login = async ctx => {
     valid: token.expiresIn
   }
   // 发邮件
-  agenda.now('登录邮件', {userName})
+  // agenda.now('登录邮件', {userName})
   ctx.state.data = {
     ...payload,
     token: jwt.sign(payload, token.secret, {expiresIn: token.expiresIn})
@@ -31,11 +31,11 @@ exports.login = async ctx => {
  * 刷新token
  */
 exports.refresh = ctx => {
-  let body = ctx.request.body
-  let oldToken = body.token
+  const {authorization} = ctx.request.header
+  if (!authorization) return ctx.throw(401)
   // 解析token
-  jwt.verify(oldToken, token.secret, (err, decoded) => {
-    if (err) ctx.throw(401, err.message)
+  jwt.verify(authorization.split(' ')[1], token.secret, (err, decoded) => {
+    if (err) return ctx.throw(401, err.message)
     let payload = {...decoded, expireAt: Date.now() + token.expiresIn * 1000}
     delete payload.exp
     delete payload.iat
